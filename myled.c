@@ -28,7 +28,7 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
 				gpio_base[10] = 1 << 25;
 				
 			else if(c == '1')
-				//while(i > 20){
+				
 				for(i=0; i<170; i++){			
 				gpio_base[7] = 1 << 25;
 				msleep(0.1);
