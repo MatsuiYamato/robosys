@@ -4,7 +4,7 @@
 #include <linux/device.h>
 #include <linux/uaccess.h>
 #include <linux/io.h>
-
+#include <linux/delay.h>
 MODULE_AUTHOR("Yamato Matsui");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
@@ -19,15 +19,30 @@ static volatile u32 *gpio_base = NULL;
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
 		char c;
+		int i ;
+		
 			if(copy_from_user(&c,buf,sizeof(char)))
 						return -EFAULT;
 
-				if(c == '0')
-							gpio_base[10] = 1 << 25;
-					else if(c == '1')
-								gpio_base[7] = 1 << 25;
-
-					        return 1;
+			if(c == '0')
+				gpio_base[10] = 1 << 25;
+				
+			else if(c == '1')
+				//while(i > 20){
+				for(i=0; i<170; i++){			
+				gpio_base[7] = 1 << 25;
+				msleep(0.1);
+				gpio_base[10] = 1 << 25;
+				msleep(20);
+				}
+				
+				
+				gpio_base[7] = 1 << 25;
+				msleep(2000);
+				gpio_base[10] = 1 << 25;
+				
+				
+			return 1;
 }
 
 static struct file_operations led_fops = {
