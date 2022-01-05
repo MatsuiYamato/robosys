@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-3.0
 /*
  * Copyright (C) 2022 MatsuiYamato and Ryuichi Ueda.  All rights reserved.
  */
