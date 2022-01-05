@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0
 /*
- * Copyright (C) 2022 MatsuiYamato.  All rights reserved.
+ * Copyright (C) 2022 MatsuiYamato and Ryuichi Ueda.  All rights reserved.
  */
 
 #include <linux/module.h>
