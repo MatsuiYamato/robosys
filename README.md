@@ -13,17 +13,17 @@
 　3.　消灯する。  
 # プログラムの使用手順
  _インストール_  
- git clone https://github.com/MatsuiYamato/robosys.git  
- cd robosys  
- make  
- sudo insmod myled.ko　　
- sudo chmod a666 /dev/myled0
+ $ git clone https://github.com/MatsuiYamato/robosys.git  
+ $ cd robosys  
+ $ make  
+ $ sudo insmod myled.ko  
+ $ sudo chmod a666 /dev/myled0
  
  _実行_  
- echo 1 > /dev/myled0  
+ $ echo 1 > /dev/myled0  
  
  _アンインストール_  
- sudo rmmod myled  
+ $ sudo rmmod myled  
  
 # 工夫・アピール点
 　PWM制御によってLEDの明るさを調節する。  
